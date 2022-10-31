@@ -157,26 +157,19 @@ struct PracticeOverlay: View{
 
     var body: some View{
         ZStack{
-            Text(detectedWord.getDetectedWord())
-                .font(.system(size: 30))
-                .fontWeight(.light)
-                .foregroundColor(.gray)
-                .frame(alignment: .center)
-                Rectangle()
-                    .fill(Color.green)
+            Rectangle()
+                .fill(Color.green)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                .opacity(0.6)
+                .ignoresSafeArea()
+                .overlay(Image(systemName: "checkmark").imageScale(.large)
+                    .font(.system(size:56.0, weight: .black))
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                    .opacity(0.6)
-                    .ignoresSafeArea()
-                    .overlay(Image(systemName: "checkmark").imageScale(.large)
-                        .font(.system(size:56.0, weight: .black))
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                        .foregroundColor(Color.white)
-                        .offset(y: -60)
-                    )
-                    .opacity(detectedWord.isDetected() ? 1 : 0)
-                    .animation(.easeInOut.speed(1), value: detectedWord.isDetected())
-
-
+                    .foregroundColor(Color.white)
+                    .offset(y: -60)
+                )
+                .opacity(detectedWord.isDetected() ? 1 : 0)
+                .animation(.easeInOut.speed(1), value: detectedWord.isDetected())
         }
         ZStack{
             VStack{
