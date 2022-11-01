@@ -37,9 +37,10 @@ struct HomeView: View {
                     .font(.system(size: 48))
                     .fontWeight(.medium)
                     .offset(y: -310)
-                Text("Sight for the world")
-                    .font(.system(size: 27))
+                Text("Sign Language for All")
+                    .font(.system(size: 25))
                     .fontWeight(.medium)
+                    .foregroundColor(.gray)
                     .offset(y: -310)
 
             }
@@ -52,10 +53,17 @@ struct HomeView: View {
                 }){
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color("Button Color"))
-                    .overlay(Text("Learn")
-                        .font(.system(size: 27))
-                        .fontWeight(.light)
-                        .foregroundColor(.black)
+                    .overlay(
+                        HStack{
+                            Image(systemName: "book").imageScale(.large)
+                                .foregroundColor(.black)
+                                .offset(x: -60)
+                            Text("Learn")
+                                .font(.system(size: 27))
+                                .fontWeight(.light)
+                                .foregroundColor(.black)
+                                .offset(x: -15)
+                        }
                     )
                     .cornerRadius(8)
                     .shadow(color: .black, radius: 4, y: 4)
@@ -75,10 +83,17 @@ struct HomeView: View {
                 }){
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color("Button Color"))
-                    .overlay(Text("Practice")
-                        .font(.system(size: 27))
-                        .fontWeight(.light)
-                        .foregroundColor(.black)
+                    .overlay(
+                        HStack{
+                            Image(systemName: "gearshape").imageScale(.large)
+                                .foregroundColor(.black)
+                                .offset(x: -46)
+                            Text("Practice")
+                                .font(.system(size: 27))
+                                .fontWeight(.light)
+                                .foregroundColor(.black)
+                                .offset(x: -12)
+                        }
                     )
                     .cornerRadius(8)
                     .shadow(color: .black, radius: 4, y: 4)
@@ -104,10 +119,18 @@ struct HomeView: View {
                 }){
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color("Button Color"))
-                    .overlay(Text("Transalate")
-                        .font(.system(size: 27))
-                        .fontWeight(.light)
-                        .foregroundColor(.black)
+                    .overlay(
+                        HStack{
+                            Image(systemName: "hand.point.right")
+                                .font(.system(size: 25, weight: .light))
+                                .foregroundColor(.black)
+                                .offset(x: -35)
+                            Text("Transalate")
+                                .font(.system(size: 27))
+                                .fontWeight(.light)
+                                .foregroundColor(.black)
+                                .offset(x: -17)
+                         }
                     )
                     .cornerRadius(8)
                     .shadow(color: .black, radius: 4, y: 4)
